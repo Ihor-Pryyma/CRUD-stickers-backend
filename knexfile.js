@@ -8,6 +8,9 @@ module.exports = {
   development: {
     client: 'pg',
     connection: 'postgres://localhost/ihor-web-store'
+  },
+  test: {
+    client: 'pg',
+    connection: 'postgres://localhost/test-ihor-web-store'
   }
-
 };
