@@ -62,8 +62,16 @@ const stickers = [
     rating: 7,
     url: 'http://devstickers.com/assets/img/pro/4gem.png'
   }
-]
+];
+
+const sticker = {
+  title: "git",
+  description: "Git logo",
+  rating: 6,
+  url: "https://devstickers.com/assets/img/pro/4mh6.png"
+};
 
 module.exports = {
-  stickers
+  stickers,
+  sticker
 };

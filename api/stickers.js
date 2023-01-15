@@ -34,7 +34,7 @@ router.get('/:id', isValidId, (req, res, next) => {
 });
 
 router.post('/', (req, res, next) => {
-  if(validSticker(req.body)) {
+  if(isValidSticker(req.body)) {
     queries.create(req.body).then(stickers => {
       res.json(stickers[0]);
     }) ;

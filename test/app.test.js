@@ -40,4 +40,19 @@ describe('CRUD Stickers', () => {
         done();
       });
   });
+
+  it('Creates a record', (done) => {
+    request(app)
+      .post('/api/v1/stickers')
+      .send(fixtures.sticker)
+      .set('Accept', 'application/json')
+      .expect('Content-Type', /json/)
+      .expect(200)
+      .then((response) => {
+        expect(response.body).to.be.a('object');
+        fixtures.sticker.id = response.body.id;
+        expect(response.body).to.deep.equal(fixtures.sticker);
+        done();
+      });
+  });
 });
