@@ -55,4 +55,21 @@ describe('CRUD Stickers', () => {
         done();
       });
   });
+
+  it('Updates a record', (done) => {
+    fixtures.sticker.rating = 5;
+
+    request(app)
+      .put('/api/v1/stickers/10')
+      .send(fixtures.sticker)
+      .set('Accept', 'application/json')
+      .expect('Content-Type', /json/)
+      .expect(200)
+      .then((response) => {
+        expect(response.body).to.be.a('object');
+        fixtures.sticker.id = response.body.id;
+        expect(response.body).to.deep.equal(fixtures.sticker);
+        done();
+      });
+  });
 });
