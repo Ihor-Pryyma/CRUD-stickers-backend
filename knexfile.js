@@ -12,5 +12,9 @@ module.exports = {
   test: {
     client: 'pg',
     connection: 'postgres://localhost/test-ihor-web-store'
+  },
+  production: {
+    client: 'pg',
+    connection: process.env.DATABASE_URL
   }
 };
