@@ -72,4 +72,15 @@ describe('CRUD Stickers', () => {
         done();
       });
   });
+
+  it('Deletes a record', (done) => {
+
+    request(app)
+      .delete('/api/v1/stickers/1')
+      .set('Accept', 'application/json')
+      .expect(200)
+      .then((response) => {
+        done();
+      });
+  });
 });
